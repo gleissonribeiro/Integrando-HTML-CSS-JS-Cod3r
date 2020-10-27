@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+  <body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>
+      // ----Adiciona a classe 'destaque' a todos os seletores 'seletor'----
+      const addDestaque = seletor =>
+        Array.from(document.querySelectorAll(seletor)).forEach(el =>
+          el.classList.add('destaque')
+        );
+      // -------------------------------------------------------------------
+      // ----Remove a classe 'destaque' de todos os seletores 'seletor'----
+      const rmDestaque = seletor =>
+        Array.from(document.querySelectorAll(seletor)).forEach(el =>
+          el.classList.remove('destaque')
+        );
+      // ------------------------------------------------------------------
+
+      // ******************************************************
+      addDestaque('#primeiro'); // Seleção por 'id'
+      addDestaque('.conteudo .ultimo'); //Seleção de classes aninhadas
+      rmDestaque('*'); //Seletor universal
+      addDestaque('.terceiro.ultimo'); //Duas classes ao mesmo tempo
+      rmDestaque('*');
+      addDestaque('div:not(#primeiro)'); //Seleção por negação
+      console.log(document.querySelectorAll('body :nth-child(1)'));
+      rmDestaque('*');
+      addDestaque(':nth-child(1)');
+      rmDestaque('*');
+      addDestaque('div:nth-of-type(1)'); //n-ésimo elemento de um tipo
+      rmDestaque('*');
+      addDestaque('[wb-attrib]'); //Seleção por atributo personalizado
+    </script>
+  </body>
+</html>
