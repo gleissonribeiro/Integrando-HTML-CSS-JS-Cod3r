@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='UTF-8'>
+  <head>
+    <meta charset="UTF-8" />
     <title>Modificando HTML #01</title>
-    <link rel='stylesheet' href='css/estilo.css'>
-</head>
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
 
-<body class='conteudo exercicio'>
+  <body class="conteudo exercicio">
     <script>
-        // ...
-    </script>
-</body>
+      // Seleciona o 'body'
+      const body = document.querySelector('body');
 
+      const div1 = document.createElement('div1'); //Cria o elemento
+      div1.classList.add('destaque'); //Adiciona classe ao elemento
+      div1.innerHTML = '<h1>Título</h1>'; //Seta o contéudo do elemeto
+
+      const div2 = document.createElement('div');
+      div2.setAttribute('wm-atributo', 'valor');
+      div2.innerHTML = 'Segundo';
+
+      const p = document.createElement('p');
+      p.innerHTML = 'Eu sou um parágrafo...';
+      const div3 = document.createElement('div');
+      div3.appendChild(p); //Coloca 'p' depois do último filho de 'div3'
+
+      body.appendChild(div1);
+      body.appendChild(div2);
+      body.appendChild(div3);
+
+      const texto = document.createTextNode('Antes.......'); //Cria um nó de texto
+      div3.insertBefore(texto, div3.childNodes[0]); //Insere o nó antes...
+
+      //   Clonando elementos
+      const div4 = div3.cloneNode(true);
+      div4.id = 'novo';
+      div4.appendChild(document.createElement('span'));
+      body.appendChild(div4);
+      document.querySelector('#novo span').innerHTML = 'span aqui';
+
+      //   Rmovendo elementos
+      body.removeChild(div3);
+    </script>
+  </body>
 </html>

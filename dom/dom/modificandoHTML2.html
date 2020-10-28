@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='UTF-8'>
+  <head>
+    <meta charset="UTF-8" />
     <title>Modificando HTML #02</title>
-    <link rel='stylesheet' href='css/estilo.css'>
-</head>
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
 
-<body class='conteudo exercicio'>
+  <body class="conteudo exercicio">
     <div>
-        <p>Texto Inicial</p>
+      <p>Texto Inicial</p>
     </div>
     <script>
-        // ...
-    </script>
-</body>
+      const div = document.querySelector('div');
+      div.innerHTML = '<h2> Novo texto </h2>';
+      //   div.outerHTML = 'Não exist mais a div'; //Muito pouco usado
 
+      div.insertAdjacentHTML('beforebegin', '<p> Parágrafo antes da div </p>');
+    </script>
+  </body>
 </html>
