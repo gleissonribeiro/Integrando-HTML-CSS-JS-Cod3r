@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='UTF-8'>
+  <head>
+    <meta charset="UTF-8" />
     <title>Acessando Atributos #02</title>
-    <link rel='stylesheet' href='css/estilo.css'>
-</head>
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
 
-<body class='conteudo exercicio'>
+  <body class="conteudo exercicio">
     <div>
-        <label for="compras">Compras</label>
-        <ul id="compras" destino='escritório' data-urgencia="5">
-            <li>Café</li>
-            <li>Água</li>
-            <li>Copo Descartável</li>
-        </ul>
+      <label for="compras">Compras</label>
+      <ul id="compras" destino="escritorio" data-urgencia="5">
+        <li>Café</li>
+        <li>Água</li>
+        <li>Copo Descartável</li>
+      </ul>
     </div>
     <script>
-        // ...
+      const lista = document.querySelector('div ul[destino="escritorio"]');
+      console.log(lista);
+      console.log(lista.id); //O browser reconhece 'id'
+      console.log(lista.destino); //'undefined' - O browser não reconhece 'destino'
+      console.log(lista.getAttributeNode('destino').value);
+      console.log(lista.hasAttribute('destino'));
+      lista.setAttribute('destino', 'rua');
+      lista.setAttribute('status', 'aberto');
+      lista.removeAttribute('destino');
+      console.log(lista.dataset);
+      lista.dataset.urgencia = 20;
+      DOMStringMap.prototype.log = function () {
+        return this.urgencia;
+      };
+      console.log(lista.dataset.log());
     </script>
-</body>
-
+  </body>
 </html>
