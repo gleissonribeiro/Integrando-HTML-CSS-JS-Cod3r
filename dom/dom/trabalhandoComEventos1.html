@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='UTF-8'>
+  <head>
+    <meta charset="UTF-8" />
     <title>Trabalhando com Eventos #01</title>
-    <link rel='stylesheet' href='css/estilo.css'>
-</head>
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
 
-<body class="conteudo exercicio">
+  <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+      <a espera-um-pouco href="https://google.com.br">Google</a>
     </div>
     <script>
-        // ...
+      // ----Função que irá lidar com o evento 'onclick'----
+      function navegarEm5s(e) {
+        console.log('Evento >> ', e);
+        e.preventDefault();
+        console.log('Sainda em 3s...');
+        console.log('e.target >> ', e.target);
+        console.log('e.target.href >> ', e.target.href);
+        console.log('window.location', window.location);
+
+        setTimeout(() => {
+          const link = e.target; //Link envolvido no evento
+          window.location.href = link.href;
+        }, 3000);
+      }
+      // ----------------------------------------------------
+      // ****1ª maneira****
+      document
+        .querySelector('div a')
+        .setAttribute('onclick', 'navegarEm5s(event)');
+      // ******************
+      // ****2ª maneira****
+      document.querySelector('div a').onclick = navegarEm5s;
+      console.log('Gleissson');
+
+      // ******************
+
+      // ****3ª maneira- mais recomendada****
+      document.querySelector('a[espera-um-pouco]').onclick = navegarEm5s;
+      // ************************************
     </script>
-</body>
+  </body>
+</html>

@@ -1,36 +1,52 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset='UTF-8'>
+  <head>
+    <meta charset="UTF-8" />
     <title>Trabalhando com Eventos #04</title>
-    <link rel='stylesheet' href='css/estilo.css'>
+    <link rel="stylesheet" href="css/estilo.css" />
     <style>
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        form input,
-        form select,
-        form button {
-            margin: 10px;
-            font-size: 1.6em;
-        }
-    </style>
-</head>
+      form {
+        display: flex;
+        flex-direction: column;
+      }
 
-<body class="conteudo exercicio">
+      form input,
+      form select,
+      form button {
+        margin: 10px;
+        font-size: 1.6em;
+      }
+    </style>
+  </head>
+
+  <body class="conteudo exercicio">
     <h1>Formulário</h1>
     <form name="pesquisa" action="http://www.google.com.br/search">
-        <input type="text" name="q" placeholder="Digite o termo...">
-        <select name="hl">
-                <option value="pt-br">Português (Brasil)</option>
-                <option value="en-us">Inglês (Americano)</option>
-            </select>
-        <button wm-submit>Pesquisar</button>
+      <input type="text" name="q" placeholder="Digite o termo..." />
+      <select name="hl">
+        <option value="pt-br">Português (Brasil)</option>
+        <option value="en-us">Inglês (Americano)</option>
+      </select>
+      <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+      // Botão do formulário
+      const button = document.querySelector('[wm-submit]');
+
+      // Clique no botão do formulário
+      button.onclick = e => {
+        e.preventDefault();
+
+        // Dados do formulário
+        const dataForm = new FormData(e.target.parentNode);
+        dataForm.append('ajax', true);
+
+        console.log(dataForm.get('ajax'));
+        console.log(dataForm.get('q')); //valor do atributo 'name' das tags
+        console.log(dataForm.get('hl')); //valor do atributo 'name' das tags
+
+        for (let dado of dataForm) console.log(dado);
+      };
     </script>
-</body>
+  </body>
+</html>

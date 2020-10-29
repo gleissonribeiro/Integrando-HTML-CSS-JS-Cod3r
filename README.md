@@ -1,5 +1,9 @@
-Integrando HTML, CSS e JS. Curso de web moderno da Cod3r na Udemy.
+# Integrando HTML, CSS e JS. Curso de web moderno da Cod3r na Udemy.
 
-# Alterações no VS Code.
+## Tópicos tratados neste capítulo
 
-Essas alterações foram feitas no _VS Code_.
+- Selecionando elementos;
+- Acessando atributos;
+- Acessando classes;
+- Modificando o HTML;
+- Trabalhando com eventos.
