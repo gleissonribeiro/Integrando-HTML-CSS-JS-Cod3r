@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+[wm-flappy] {
+  background-color: deepskyblue;
+  border: 5px solid dodgerblue;
+  height: 700px;
+  overflow: hidden;
+  position: relative;
+  width: 1200px;
+}
+
+.barreira {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.par-de-barreiras {
+  align-items: center;
+  /* background-color: brown; */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  width: 100px;
+}
+
+.perdeu {
+  background: rgb(123, 45, 78);
+  color: whitesmoke;
+  font-size: 100px;
+  text-align: center;
+}
+
+.progresso {
+  font-family: 'Pixel';
+  font-size: 70px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.barreira .borda {
+  background: linear-gradient(90deg, #639301, #a5e82e);
+  border: 2px solid black;
+  border-radius: 5px;
+  height: 20px;
+  width: 100%;
+}
+
+.barreira .corpo {
+  background: linear-gradient(90deg, #639301, #a5e82e);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  /* height: 100px; */
+  width: 110px;
+  width: 80%;
+}
+
+.passaro {
+  /* bottom: 50%; */
+  left: calc(50% - 30px);
+  position: absolute;
+  width: 60px;
+}
+
+@font-face {
+  font-family: 'Pixel';
+  src: url('../fonts/Pixel.ttf');
+}
