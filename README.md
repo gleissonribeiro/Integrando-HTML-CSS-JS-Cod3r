@@ -6,4 +6,5 @@
 - Acessando atributos;
 - Acessando classes;
 - Modificando o HTML;
-- Trabalhando com eventos.
+- Trabalhando com eventos;
+- Implementação do Flappy Bird.
